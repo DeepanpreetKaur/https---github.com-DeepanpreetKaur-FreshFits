@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+    /* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+    rgba(247, 173, 195, 0.3),
+    rgba(248, 248, 172, 0.3),
+    rgba(247, 173, 195, 0.3),
+    rgba(248, 248, 172, 0.3),
+    rgba(247, 173, 195, 0.3),
+    rgba(248, 248, 172, 0.3),
+    rgba(247, 173, 195, 0.3),
+    rgba(248, 248, 172, 0.3)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100svh;
+}
+
+@font-face {
+  src: url(Poppins-Regular.ttf);
+  font-family: pop;
+}
+
+@font-face {
+  src: url(Poppins-BlackItalic.ttf);
+  font-family: popBold;
+}
+
+* {
+  font-family: pop;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding-top: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#search {
+  width: 600px;
+  height: 30px;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  color: black;
+  border-color: black;
+}
+
+#searchIcon {
+  height: 25px;
+  position: absolute;
+  top: 3%;
+  left: 29%;
+}
+
+div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  display: block;
+  width: 90%;
+}
+
+tr {
+  height: 60px;
+  width: 100%;
+}
+
+table,
+td,
+th {
+  vertical-align: middle;
+}
+
+td,
+th {
+  padding: 10px 18px;
+  text-align: center;
+  vertical-align: middle;
+  color: #333;
+}
+
+th {
+  width: 15%;
+  font-size: 18px;
+}
+
+.img {
+  height: 80px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 18px;
+  color: rgb(115, 114, 114);
+  border: 2px solid rgb(115, 114, 114);
+}
+
+.space {
+  margin-left: 5px;
+}
+
+#add {
+  position: fixed;
+  z-index: 2;
+  bottom: 50px;
+  right: 80px;
+  background-color: #ff0051;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 2px solid #ff0051;
+}
+
+#all {
+  background-color: #ff0051;
+  color: white;
+  font-size: 16px;
+  padding: 6px 10px;
+  border: 2px solid #ff0051;
+  margin-left: 20px;
+}
+
+#align {
+  text-align: center;
+}
+
+#logout {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 10px;
+  background-color: #ff0051;
+  color: white;
+  font-size: 16px;
+  padding: 2px 10px;
+  border: 2px solid #ff0051;
+}
+  #home{
+        color:#ff0051;
+        font-size:30px;
+        margin-top:120px;
+        margin-left:5px;
+      }
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1580px) {
+      #searchIcon {
+        left:28%;
+      }
+    }
+    @media only screen and (max-width: 1550px) {
+      #searchIcon {
+        left:27.5%;
+      }
+    }
+    @media only screen and (max-width: 1500px) {
+      #searchIcon {
+        left:26.5%;
+      }
+    }@media only screen and (max-width: 1450px) {
+      #searchIcon {
+        left:25.5%;
+      }
+    }
+    @media only screen and (max-width: 1340px) {
+    #searchIcon {
+        left:23.5%;
+      }
+  }
+    @media only screen and (max-width: 1250px) {
+    #searchIcon {
+        left:22%;
+      }
+}
+@media only screen and (max-width: 1150px) {
+      #searchIcon {
+        left:25%;
+      }
+    }
+
+  
+    @media only screen and (max-width: 1100px) {
+      #searchIcon {
+        left:20%;
+      }
+    } 
+    @media only screen and (max-width: 1060px) {
+      #searchIcon {
+        left:18%;
+      }
+    } 
+@media only screen and (max-width: 840px){
+      #searchIcon {
+        left:22%;
+      }
+}
+@media only screen and (max-width: 800px) {
+      #searchIcon {
+        left:18%;
+      }
+    }
+    @media only screen and (max-width: 700px) {
+      #searchIcon {
+        left:14%;
+      }
+    }
+    @media only screen and (max-width: 650px) {
+      #searchIcon {
+        left:10%;
+      }
+    }
+@media only screen and (max-width: 600px){
+      #searchIcon{
+      left:14%;
+      }
+
+}
+
+
+/* For max-width: 1200px */
+@media (max-width: 1200px) {
+  #search {
+    width: 500px;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  table {
+    width: 85%;
+  }
+
+  .img {
+    height: 70px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  #add {
+    right: 60px;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  #all{
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  #logout {
+    font-size: 14px;
+    padding: 2px 8px;
+  }
+}
+@media (max-width: 1000px) {
+  table {
+    width: 100%;
+  }
+  #div{
+    display: block;
+  }
+  td,th{
+    padding:20px;
+  }
+}
+/* For max-width: 900px */
+@media (max-width: 900px) {
+  #search {
+    width: 400px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  table {
+    width: 90%;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+
+  .img {
+    height: 60px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  #add {
+    right: 40px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  #all{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  #home{
+    font-size: 20px;
+  }
+  #logout {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+  th{
+    width:5%;
+  }
+  td,th{
+    padding:8px;
+  }
+  #div{
+    display: block;
+  }
+  
+}
+@media (max-width: 600px) {
+  table {
+    width: 60%;
+  }
+  td,
+  th {
+    padding:5px;
+  }
+  #search{
+    width:350px;
+  }
+}
+/* For max-width: 600px */
+
+@media (max-width: 560px) {
+  
+  #search {
+    width: 300px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table {
+    width: 60%;
+  }
+
+  td,
+  th {
+    font-size: 14px;
+    padding:5px;
+  }
+  th{
+    width:8%;
+  }
+  .img {
+    height: 50px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+  #div{
+    display: block;
+  }
+  #add {
+    right: 20px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  #all{
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  
+  #logout {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+}
+   
+
+    </style>
+  </head>
+  <body>
+    <a href="/" id="home"><i class="fa-solid fa-house"></i></a>
+    <h1>List of Products</h1>
+    <br />
+    <form action="/admin/ProductList" method="post">
+      <div>
+        <img src="loupe.png" id="searchIcon" />
+        <input type="search" placeholder="Search..." id="search" name="search">
+      </div>
+    </form>
+    <button id="logout">LogOut</button>
+    <div id="align"><%= message %></div>
+    <br />
+    <button id="all">Show all Products</button>
+    <div id="div">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th style="display: none;">Product_id</th>
+          <th>Price</th>
+          <th>Discount_Price</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <% list.forEach(product=>{ %>
+        <tr>
+          <td class="products">
+            <img src="<%=product.image_url%>" class="img" />
+            <p class="name"><%= product.product_name %></p>
+          </td>
+          <td><%= product.name %></td>
+          <td style="display: none;"><%= product.product_id %></td>
+          <td><%= product.price %></td>
+          <td><%= product.discount_price %></td>
+          <td>
+            <button class="edit">
+              <i class="fa-solid fa-pencil"><span class="space"></span></i>Edit
+            </button>
+          </td>
+          <td>
+            <button class="delete">
+              <i class="fa-solid fa-trash"><span class="space"></span></i>Delete
+            </button>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+      <br /><br /><br /><br /><br /><br />
+      <button id="add">Add product!</button>
+    </div>
+    <script>
+
+      const products=document.querySelectorAll('.products');
+      products.forEach(product=>{
+        const tr = product.parentNode;
+        const id = tr.childNodes[5].textContent;
+        product.addEventListener("click", () => {
+          console.log(id, "event");
+          window.location.href = `/admin/ProductDetails?productid=${id}`;
+        });
+      })
+
+      const edits = document.querySelectorAll(".edit");
+      edits.forEach((edit) => {
+        const tr = edit.parentNode.parentNode;
+        const id = tr.childNodes[5].textContent;
+        edit.addEventListener("click", () => {
+          console.log(id, "event");
+          window.location.href = `/admin/editProduct?productid=${id}`;
+        });
+      });
+
+      const deletes = document.querySelectorAll(".delete");
+      deletes.forEach(function(d){
+        const tr = d.parentNode.parentNode;
+        const id = tr.childNodes[5].textContent;
+        d.addEventListener("click", () => {
+          console.log(id, "event");
+          window.location.href = `/admin/deleteProduct/${id}`;
+        });
+      })
+      document.getElementById('add').addEventListener('click',()=>{
+        window.location.href = /admin/addProduct;
+      })
+      document.getElementById("all").addEventListener("click",()=>{
+        window.location.href='/admin/ProductList';
+      })
+      const logout=document.getElementById('logout');
+      logout.addEventListener('click',()=>{
+        window.location.href='/admin/logout';
+      })
+    </script>
+  </body>
+</html>

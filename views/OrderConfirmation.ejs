@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <title>Create Account</title>
+    <style>
+      @font-face {
+        src: url(Poppins-Regular.ttf);
+        font-family: pop;
+      }
+      @font-face {
+        src: url(Poppins-BlackItalic.ttf);
+        font-family: popBold;
+      }
+      * {
+        font-family: pop;
+      }
+
+      body {
+        font-family: poppins;
+        background-color: #f4f7f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: linear-gradient(
+            /* rgba(255, 0, 81,0.3), */
+          rgba(247, 173, 195, 0.3), 
+          rgba(248, 248, 172, 0.3)
+        );
+        background-repeat: no-repeat;
+      }
+
+      #big {
+        font-size: 30px;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      #img1 {
+        margin-right: 12px;
+        margin-top: 15px;
+        height: 65px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        top: 80px;
+      }
+      .header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid #e1e1e1;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #ff0051;
+      }
+      #check{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ff0051;
+        color: white;
+        border-radius:50%;
+        width:30px;
+        height:30px;
+        font-size:40px;
+        font-weight:bolder;
+        padding: 20px;
+        margin: auto;
+      }
+      .med{
+        font-size:22px;
+        font-weight: bold;
+        color:#ff0051;
+      }
+      #big2{
+        font-size:30px;
+        font-weight: bold;
+        color:#ff0051;
+      }
+      #div{
+        text-align: center;
+      }
+      table{
+        width:40%;
+        margin: auto;
+      }
+      
+      .img{
+        height:200px;
+        float:left;
+      }
+      #table{
+        width:80%;
+      }
+      #table tr{
+        width:300px;
+      }
+      #table td,th{
+        width:300px;
+        text-align: center;
+        padding:20px;
+      }
+      #table th{
+        background-color: #ff0051;
+        color: white;
+      }
+      td,th{
+        text-align: center;
+      }
+      #o{
+        margin-left:15px;
+        font-size:25px;
+      }
+      #home{
+        color:#ff0051;
+        font-size:30px;
+        margin-top:90px;
+        margin-left:20px;
+      }
+ @media (max-width: 1200px) {
+  #table1{
+    width:40%;
+  }
+  .container {
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    font-size: 15px;
+  }
+
+  .form-group button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+@media (max-width: 1100px){
+
+  .pro{
+    width:55%;
+  }
+}
+/* For max-width: 900px */
+@media (max-width: 900px) {
+
+  #table{
+    font-size:15px;
+  }
+  .pro{
+    width:60%;
+  }
+  .container {
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  .form-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  #img1 {
+    margin-top:23px;
+    height: 50px;
+  }
+  #table1{
+    width:80%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .pro{
+    width:50%;
+  }
+  body {
+    background-size: auto; 
+  }
+  .container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 8px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 13px;
+  }
+
+  .form-group button {
+    font-size: 13px;
+    padding: 8px;
+  }
+  #table1{
+    font-size:14px;
+  }
+
+  }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" id="home"><i class="fa-solid fa-house"></i></a>
+      <div></div>
+      <div class="flex">
+        <img src="shopping-cart (1).png" alt="shopping" id="img1">
+        <p id="big">FreshFits</p>
+      </div>
+      <div></div>
+    </nav>
+    <div id="check">
+        <i class="fa-solid fa-check"></i>
+    </div>
+    <div id="div">
+    <p class="med">Hi <%=user.username%>,</p>
+    <p id="big2">Thanks For Your Order!</p>
+    </div>
+    <div>
+    <table id="table1">
+        <tr>
+            <th>Date</th>
+            <th>Payment Method</th>
+        </tr>
+        <tr>
+            <td id="date"></td>
+            <td>card</td>
+        </tr>
+    </table>
+    </div>
+    <p class="med" id="o">Order Summary</p>
+    <table id="table">
+        <tr>
+            <th class="pro">Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <% list.forEach(product=>{ %>
+        <tr>
+            <td class="pro">
+                <img src="<%=product.image_url%>" class="img">
+                <div id="detail">
+                    <p class="name"><%= product.product_name %></p>
+                    <p>delivered by 5-7 days</p>
+                    <p>Size: <%= product.size %></p>
+                </div>
+            </td>
+            <td>
+                <%= product.Quantity %>
+            </td>
+            <td>
+                $<%= product.sub %>
+            </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td></td>
+            <td>SubTotal:</td>
+            <td>$<%= list[0].Tamount %></td>
+        </tr>
+    </table>
+    <script>
+        const d = new Date();
+        const date=document.getElementById("date");
+        const month=Number(d.getMonth())+1;
+        date.innerHTML= d.getDate()+"/"+month+"/"+d.getFullYear();
+    </script>
+  </body>
+</html>

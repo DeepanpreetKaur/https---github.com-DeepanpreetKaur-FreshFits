@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Shipping Address</title>
+    <style>
+      @font-face {
+        src: url(Poppins-Regular.ttf);
+        font-family: pop;
+      }
+      * {
+        font-family: pop;
+      }
+
+      body {
+        font-family: poppins;
+        background-color: #f4f7f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: linear-gradient(
+          rgba(247, 173, 195, 0.3),
+          rgba(248, 248, 172, 0.3)
+        );
+        background-repeat: no-repeat;
+        min-height: 100svb;
+      }
+
+      #big {
+        font-size: 30px;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      #img1 {
+        margin-right: 12px;
+        margin-top: 15px;
+        height: 65px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0px auto;
+        margin-bottom:10px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        top: 0px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        margin-top: 30px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      .form-group input:focus {
+        border-color: #ff0051;
+        outline: none;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #ff0051;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .form-group button:hover {
+        background-color: #ff0051;
+      }
+      #align{
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div></div>
+      <div class="flex">
+        <img src="shopping-cart (1).png" alt="shopping" id="img1">
+        <p id="big">FreshFits</p>
+      </div>
+      <div></div>
+    </nav>
+    <div id="align"><%= message %></div><br>
+    <div class="container">
+      <h2>Phone Number</h2>
+      <form id="form" action="/user/address" method="post">
+        <div class="form-group">
+          <label for="phone">Enter Phone Number:</label>
+          <input type="tel" id="phone" name="PhoneNumber" placeholder="+919876543210" value="<%= body.PhoneNumber %>" required  >
+          <div id="error-message" class="error"></div>
+          <!-- <label for="Street">Street Address:</label>
+          <input type="text" id="Street" name="StreetAddress" value="<%= body.StreetAddress %>" required >
+          <div id="error-message2" class="error"></div>
+          <label for="City">City:</label>
+          <input type="text" id="City" name="City" value="<%= body.City %>" required >
+          <div id="error-message3" class="error"></div>
+          <label for="State">State:</label>
+          <input type="text" id="State" name="State" value="<%= body.State %>" required >
+          <div id="error-message4" class="error"></div>
+          <label for="ZipCode">Zip Code:</label>
+          <input type="text" id="ZipCode" name="ZipCode" value="<%= body.ZipCode %>" required >
+          <div id="error-message5" class="error"></div>
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="Country" value="<%= body.Country %>" required >
+          <div id="error-message6" class="error"></div> -->
+        </div>
+        <div class="form-group">
+          <button type="submit">Place Order</button>
+        </div>
+      </form>
+    </div>
+    <script>
+    </script>
+    
+  </body>
+</html>

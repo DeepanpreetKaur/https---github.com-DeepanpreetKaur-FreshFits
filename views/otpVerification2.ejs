@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <style>
+      @font-face {
+        src: url(Poppins-Regular.ttf);
+        font-family: pop;
+      }
+      * {
+        font-family: pop;
+      }
+      body {
+        font-family: poppins;
+        background-color: #f4f7f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: linear-gradient(
+          rgba(247, 173, 195, 0.3),
+          rgba(248, 248, 172, 0.3)
+        );
+        background-repeat: no-repeat;
+        height: 730px;
+      }
+
+      #big {
+        font-size: 30px;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      #img1 {
+        margin-right: 12px;
+        margin-top: 15px;
+        height: 65px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        top: 60px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        margin-top: 30px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      .form-group input:focus {
+        border-color: #ff0051;
+        outline: none;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #ff0051;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .form-group button:hover {
+        background-color: #ff0051;
+      }
+      #align{
+        text-align: center;
+        font-weight: bold;
+      }
+      /* For max-width: 1200px */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    font-size: 15px;
+  }
+
+  .form-group button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* For max-width: 900px */
+@media (max-width: 900px) {
+  .container {
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  .form-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  #img1 {
+    margin-top:23px;
+    height: 50px;
+  }
+}
+
+/* For max-width: 600px */
+@media (max-width: 600px) {
+  body {
+    background-size: auto; /* Adjust background size for smaller screens */
+  }
+  .container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 8px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 13px;
+  }
+
+  .form-group button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div></div>
+      <div class="flex">
+        <img src="shopping-cart (1).png" alt="shopping" id="img1">
+        <p id="big">FreshFits</p>
+      </div>
+      <div></div>
+    </nav>
+    <div id="align"><%= message %></div>
+    <div class="container">
+      <h2>OTP Verification</h2>
+      <p>Please enter the OTP sent to your email/phone.</p>
+      <form id="otpForm" action="/user/otp" method="post">
+        <input type="hidden" name="type" value=<%=type %> >
+        <div class="form-group">
+          <label for="otp">Enter OTP:</label>
+          <input type="text" id="otp" name="otp" maxlength="6" required />
+          <div id="error-message" class="error"></div>
+        </div>
+        <div class="form-group">
+          <button type="submit">Verify OTP</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

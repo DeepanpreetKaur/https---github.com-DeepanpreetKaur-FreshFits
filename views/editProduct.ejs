@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: linear-gradient(
+          rgba(247, 173, 195, 0.3),
+          rgba(248, 248, 172, 0.3)
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+      }
+      #big {
+        font-size: 30px;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      #img1 {
+        margin-right: 12px;
+        margin-top: 10px;
+        height: 65px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .header {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 2px solid #e1e1e1;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #ff0051;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        margin-top: 30px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .form-group input {
+        width: 97%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .form-group input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #ff0051;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .form-group button:hover {
+        background-color: #ff0051;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+      }
+      .footer a {
+        color: #ff0051;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .preview {
+        max-width: 100%;
+        max-height: 300px;
+        display: block;
+      }
+      /* For max-width: 1200px */
+@media (max-width: 1200px) {
+  #description{
+    width:100%;
+  }
+  .container {
+    max-width: 500px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 15px;
+  }
+
+  .form-group button {
+    font-size: 15px;
+    padding: 12px;
+  }
+  .form-group img{
+    width:240px;
+  }
+}
+
+/* For max-width: 900px */
+@media (max-width: 900px) {
+  .container {
+    max-width: 400px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  .form-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .form-group img{
+    width:200px;
+  }
+}
+
+/* For max-width: 600px */
+@media (max-width: 600px) {
+  
+  .form-group button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  #img1 {
+    margin-top:18px;
+    height: 50px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+  .footer a {
+    font-size: 12px;
+  }
+  .form-group img{
+    width:120px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div></div>
+      <div class="flex">
+        <img src="shopping-cart (1).png" alt="shopping" id="img1">
+        <p id="big">FreshFits</p>
+      </div>
+      <div></div>
+    </nav>
+    <div class="container">
+      <div class="header">
+        <h1>Edit Products</h1>
+      </div>
+      <form action="/admin/editProduct" method="post">
+        <input type="hidden" id="id" name="id" value="<%= product[0].i %>" >
+        <div class="form-group">
+          <label for="productname">Product Name</label>
+          <input
+            type="text"
+            id="productname"
+            name="productname"
+            value="<%= product[0].product_name %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea name="message" rows="6" cols="79" id="description">
+            <%=product[0].description%>
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            required
+            value="<%= product[0].price %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="discountprice">Discount Price</label>
+          <input
+            type="number"
+            id="discountprice"
+            name="discountprice"
+            required
+            value="<%=product[0].discount_price%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="quantity">Stock Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="<%= product[0].stock_quantity %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="size">Size</label>
+          <input
+            type="text"
+            id="size"
+            name="size"
+            value="<%= product[0].size %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input
+            type="text"
+            id="color"
+            name="color"
+            required
+            value="<%= product[0].color %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="material">Material</label>
+          <input
+            type="text"
+            id="material"
+            name="material"
+            value="<%= product[0].material %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="image1">Image1</label>
+          <input
+            type="file"
+            id="image1"
+            name="image1"
+          />
+          <img
+            id="preview1"
+            class="preview"
+            src="<%=product[0].p%>"
+            alt="Image Preview"
+          />
+        </div>
+        <div class="form-group">
+          <label for="image2">Image2</label>
+          <input type="file" id="image2" name="image2" >
+          <img
+            id="preview2"
+            class="preview"
+            src="<%=product[0].image_url%>"
+            alt="Image Preview"
+          />
+        </div>
+        <div class="form-group">
+          <label for="image3">Image3</label>
+          <input type="file" id="image3" name="image3" >
+          <img id="preview3" class="preview" src="<%= product[0].image_url2 %>" alt="Image Preview" />
+        </div>
+        <div class="form-group">
+          <label for="image4">Image4</label>
+          <input type="file" id="image4" name="image4" >
+          <img
+            id="preview4"
+            class="preview"
+            src="<%=product[0].image_url3%>"
+            alt="Image Preview"
+          />
+        </div>
+        <div class="form-group">
+          <label for="category">category</label>
+          <input type="text" id="category" name="category" value="<%= product[0].name %>" required />
+        </div>
+        <div class="form-group">
+          <label for="section">Section</label>
+          <input
+            type="text"
+            id="section"
+            name="section"
+            value="<%= product[0].Section %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit">Edit Product</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // if (
+      //   performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD
+      // ) {
+      //   window.location.reload(true); // true forces a reload from the server
+      // }
+
+      document
+        .getElementById("image1")
+        .addEventListener("change", function (event) {
+          image(event, "preview1");
+        });
+      document
+        .getElementById("image2")
+        .addEventListener("change", function (event) {
+          image(event, "preview2");
+        });
+      document
+        .getElementById("image3")
+        .addEventListener("change", function (event) {
+          image(event, "preview3");
+        });
+      document
+        .getElementById("image4")
+        .addEventListener("change", function (event) {
+          image(event, "preview4");
+        });
+      function image(event, p) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const img = document.getElementById(p);
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+  </body>
+</html>

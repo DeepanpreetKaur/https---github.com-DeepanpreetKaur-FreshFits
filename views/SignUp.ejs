@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <style>
+      @font-face {
+        src: url(Poppins-Regular.ttf);
+        font-family: pop;
+      }
+      @font-face {
+        src: url(Poppins-BlackItalic.ttf);
+        font-family: popBold;
+      }
+      * {
+        font-family: pop;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: linear-gradient(
+          rgba(247, 173, 195, 0.3),
+          rgba(248, 248, 172, 0.3)
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100svb
+      }
+      #big {
+        font-size: 30px;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      #img1 {
+        margin-right: 12px;
+        margin-top: 15px;
+        height: 65px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .header {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 2px solid #e1e1e1;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #ff0051;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        margin-top: 30px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .form-group input {
+        width: 97%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .form-group input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #ff0051;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .form-group button:hover {
+        background-color: #ff0051;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+      }
+      .footer a {
+        color: #ff0051;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      #message{
+        text-align: center;
+        font-weight: bold;
+      }
+      .error{
+        width: 97%;
+        padding: 10px;
+      }
+      .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+      }
+      .toggle-container input {
+            margin-right: 5px;
+      }
+      #togglePassword{
+        display: none;
+      }
+/* For max-width: 1200px */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .form-group input,.error {
+    width:95%;
+    font-size: 15px;
+  }
+
+  .form-group button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* For max-width: 900px */
+@media (max-width: 900px) {
+  .container {
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .form-group input,.error {
+    font-size: 14px;
+  }
+
+  .form-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  #img1 {
+    margin-top:23px;
+    height: 50px;
+  }
+}
+
+/* For max-width: 600px */
+@media (max-width: 600px) {
+  body {
+    background-size: auto; /* Adjust background size for smaller screens */
+  }
+  .container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 8px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .form-group input,.error {
+    font-size: 13px;
+  }
+
+  .form-group button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div></div>
+      <div class="flex">
+        <img src="shopping-cart (1).png" alt="shopping" id="img1">
+        <p id="big">FreshFits</p>
+      </div>
+      <div></div>
+    </nav>
+    <div id="message"><%=message %></div>
+    <div class="container">
+      <div class="header">
+        <h1>Create Your Account</h1>
+      </div>
+      <form action="/user/signup" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" value="<%=body.username%>" required />
+          <div class="error"><%= name %></div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" value="<%=body.email%>" required />
+          <div class="error"><%= email %></div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" value="<%=body.password%>" required />
+          <div class="toggle-container">
+            <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()">
+            <label for="togglePassword" id="showhide">Show Password</label>
+          </div>
+          <div class="error"><%= password %></div>
+        </div>
+        <div class="form-group">
+          <button type="submit">Create Account</button>
+        </div>
+      </form>
+      <div class="footer">
+        <p>Already have an account? <a href="/user/login">Login here</a></p>
+      </div>
+    </div>
+    <script>
+      function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            const pass=document.getElementById("showhide");
+            if (togglePassword.checked) {
+                passwordField.type = 'text';
+                pass.textContent="Hide Password";
+            } else {
+                passwordField.type = 'password';
+                pass.textContent="Show Password";
+            }
+        }
+    </script>
+  </body>
+</html>

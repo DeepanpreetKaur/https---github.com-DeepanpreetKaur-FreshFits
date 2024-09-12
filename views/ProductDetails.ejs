@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+     @font-face
+    {
+      src: url(Poppins-Regular.ttf);
+      font-family: pop;
+    }
+    @font-face
+    {
+      src: url(Poppins-Black.ttf);
+      font-family: popBold;
+    }
+    * {
+      font-family: pop;
+    }
+    h1{
+      padding-top: 50px;
+      font-size:60px;
+      font-family: popBold;
+    }
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:active {
+      color: black;
+      text-decoration: solid 2px red underline;
+    }
+
+    a:hover {
+      color: black;
+      text-decoration: solid 2px red underline;
+    }
+
+    a:visited {
+      color: black;
+      text-decoration: solid 2px red underline;
+    }
+
+    .log{
+      border-radius: 40px;
+      padding: 5px 20px;
+      border: 1px gray solid;
+      color: rgb(63, 63, 63);
+      width: 100px;
+      height: 30px;
+      margin-top: 5px;
+      background-color: white;
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 20px;
+    }
+    .images{
+      width:65%;
+      height:600px;
+     display: flex;
+     flex-wrap: wrap;
+    }
+    .img{
+      height:600px;
+      margin-bottom:5px;
+      margin-right:5px;
+      border:1px solid black;
+    }
+    #des{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flex{
+      width:35%;
+    }
+    p{
+      padding-left:10px;
+      font-size:20px;
+    } 
+    table{
+      width: 70%;
+    }
+    table,td{
+      border:2px solid grey;
+      border-collapse: collapse;
+    }
+
+    td{
+      width:50%;
+      text-align: center;
+    }
+    td h2,p{
+      display: inline-block;
+    }
+    .f{
+        display: flex;
+
+    }
+    #cart{
+        background-color: #ff0051;
+        color:white;
+        border:none;
+        border-radius:10px;
+        font-size:24px;
+        padding:20px 30px;
+        margin-top:20px;
+    }
+    #line{
+        text-decoration:line-through;
+        padding:0px 10px;
+    }
+    #dis{
+        color: #ff0051;
+        font-weight: bold;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    #search {
+      width: 600px;
+      height: 30px;
+      border-radius: 20px;
+      margin: auto;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      font-size: 20px;
+      color: black;
+      border-color: black;
+    }
+    #big {
+      font-size: 30px;
+    }
+
+    #searchIcon {
+      height: 25px;
+      position: absolute;
+      left:29%;
+      top:3%;
+    }
+    header{
+        background-color:rgba(247, 173, 195, 0.1);
+    }
+    nav {
+      display: grid;
+      grid-template-columns: 9% 15% 18% 20% 18% 11% 9%;
+      align-items: center;
+    }
+    img {
+      height: 40px;
+    }
+    .flex1,
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+    #img1 {
+      margin-top: 26px;
+      height:65px;
+    }
+
+    #img2 {
+      margin-bottom: 5px;
+    }
+    footer{
+      margin-top:260px;
+      background-color: #ff0051;
+      color:white;
+      position: relative;
+      height:300px;
+    }
+    #grid2{
+      display: grid;
+      grid-template-columns: 15% 30% 10% 30% 15%;
+      font-size:20px;
+      color: white;
+      padding-top:100px;
+    }
+    #grid2 div{
+      text-align: center;
+      
+    }
+    .flex2 {
+      display: flex;
+      width: 15%;
+      height:80px;
+      position: absolute;
+      top: 15px;
+      left:50%;
+      transform: translate(-50%,0);
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      color: black;
+    }
+    .a{
+      display: block;
+    }
+    .a:link{
+      color:white;
+    }
+    .a:hover{
+      color:white;
+      text-decoration: none;
+    }
+    .a:visited{
+      color: white;
+    }
+    #align{
+      text-align: center;
+    }
+    /* For screens smaller than or equal to 600px */
+/* For screens between 601px and 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+    h1 {
+        font-size: 50px; /* Slightly reduced font size */
+        padding-top: 30px; /* Reduced padding */
+    }
+    #search {
+        width: 80%; /* Adjust width */
+        font-size: 18px; /* Adjusted font size */
+    }
+
+    nav {
+        grid-template-columns: 15% 20% 20% 20% 15%; /* Adjusted grid columns */
+    }
+
+    footer {
+        height: auto; /* Adjust height automatically */
+        padding: 40px; /* Added padding for medium screens */
+    }
+}
+
+#checkbox,.b,#cross{
+      display: none;
+    }
+    header{
+        background-color:rgba(247, 173, 195, 0.1);
+    } 
+    @media only screen and (max-width: 1580px) {
+      *{
+        max-width:100%;
+      }
+      #searchIcon {
+        left:28%;
+      }
+      .flex2{
+      width:250px;
+    }
+    }
+    @media only screen and (max-width: 1550px) {
+      #searchIcon {
+        left:27.5%;
+      }
+    }
+    @media only screen and (max-width: 1500px) {
+    .img{
+        height: 500px; /* Adjust height automatically */
+        width: 48%; /* Full width */
+        margin-bottom:0px;
+    }
+      #searchIcon {
+        left:26.5%;
+      }
+      footer{
+        margin-top:100px;
+      }
+    }
+    @media only screen and (max-width: 1450px) {
+      #searchIcon {
+        left:25.5%;
+      }
+      nav {
+      grid-template-columns: 9% 15% 16% 24% 16% 11% 9%;
+    }
+    }
+    @media only screen and (max-width: 1340px) {
+
+    #searchIcon {
+        left:23.5%;
+      }
+  }
+    @media only screen and (max-width: 1250px) {
+    nav {
+      grid-template-columns: 8% 17% 14% 26% 14% 13% 8%;
+    }
+    #searchIcon {
+        left:21%;
+      }
+    
+}
+@media only screen and (max-width: 1150px) {
+      #searchIcon {
+        left:18%;
+      }
+      nav {
+      grid-template-columns: 6% 18% 14% 28% 14% 14% 6%;
+    }
+    }
+@media (min-width: 840px) and (max-width: 1100px) {
+  .images {
+        width: 50%; /* Full width */
+        height: 1500px; /* Adjust height automatically */
+      
+    }
+    .img{
+        height: 500px; /* Adjust height automatically */
+        width: 100%; /* Full width */
+        margin-bottom:0px;
+    }
+    .flex{
+      margin-left:50px;
+      width:50%;
+    }
+    .img:last-child{
+      display: none;
+    }
+    footer{
+      margin-top:100px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+      #searchIcon {
+        left:16.5%;
+      }
+     
+    }
+   
+@media only screen and (max-width: 1030px) {
+    nav {
+      grid-template-columns: 4% 19% 12% 30% 12% 16% 4%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+      #searchIcon {
+        left:14%;
+      }
+    }
+@media only screen and (max-width: 940px) {
+    #search{
+        width:600px;
+      }
+      #searchIcon {
+        left:10%;
+      }
+      nav {
+      grid-template-columns: 2% 20% 10% 36% 10% 16% 2%;
+    }
+   
+    }
+@media (min-width: 601px) and (max-width: 840px) {
+    
+   
+    .flex p{
+      font-size:20px;
+    }
+    .flex h2{
+      font-size:24px;
+    }
+    footer{
+      margin-top:100px;
+    }
+}
+@media only screen and (max-width: 840px){
+      #searchIcon {
+        left:6%;
+      }
+      nav {
+      grid-template-columns: 2% 21% 6% 38% 6% 17% 2%;
+    }
+    .img:last-child
+    {
+      display: none;
+    }
+    #cart{
+      width:400px;
+     
+    }
+    .flex{
+      margin-left:15px;
+      width:50%;
+    }
+    .images {
+        width: 50%; /* Full width */
+        height: 600px; /* Adjust height automatically */
+      
+    }
+    .img{
+        height: 400px; /* Adjust height automatically */
+        width: 100%; /* Full width */
+        margin-bottom:0px;
+    }
+}
+@media only screen and (max-width: 800px) {
+      #grid2 {
+        grid-template-columns: 10% 37% 6% 37% 10%; /* Original grid */
+        font-size: 16px; /* Original font size */
+      }
+      #search{
+        width:600px;
+      }
+      #searchIcon {
+        left:5%;
+      }
+      nav {
+      grid-template-columns: 0% 21% 10% 38% 10% 20% 0%;
+    }
+    .flex2{
+      width:220px;
+    }
+    #butt1,#logout{
+      width:75px;
+    }
+    
+    }
+    @media only screen and (max-width: 750px) {
+      #searchIcon{
+        left:2%;
+      }
+     
+    nav {
+      grid-template-columns: 0% 21% 6% 42% 6% 20% 0%;
+    }
+  }
+    @media only screen and (max-width: 700px) {
+      nav {
+      grid-template-columns: 0% 21% 6% 42% 6% 18% 0%;
+    }
+      #searchIcon {
+        left:2%;
+      }
+      #search{
+        width:550px;
+        height:26px;
+        font-size:16px;
+      }
+    .log{
+      padding:0px;
+      width:60px;
+      font-size:12px;
+    }
+    #img2{
+      width:100px;
+    }
+    #img1{
+      width:50px;
+      height:50px;
+    }
+    #big{
+      font-size:30px;
+    }
+    li{
+      font-size:18px;
+    }
+    #butt1,#logout{
+      width:80px;
+    }
+    }
+    @media only screen and (max-width: 650px) {
+      #searchIcon {
+        left:1%;
+      }
+      #search{
+        width:510px;
+      }
+      nav {
+      grid-template-columns: 0% 21% 7% 48% 5% 20% 0%;
+    }
+    }
+@media only screen and (max-width: 600px){
+  body{
+    max-width:100%;
+  }
+  nav {
+      grid-template-columns: 5% 20% 21% 15% 14% 22% 5%;
+      height:90px;
+    }
+    #searchIcon {
+        left:0%;
+      }
+      #search{
+        width:500px;
+      }
+      
+      #img1{
+        margin-top:22px;
+      }
+    ul{
+      width:80px;
+      display: none;
+      position: absolute;
+      top:0px;
+      left:0px;
+      height:300px;
+      background-color:white;
+      color: #ff0051;
+      z-index:1;
+    }
+    ul li{
+      display:block;
+      width:100%;
+      padding:20px;
+      padding-left:0px;
+    }
+    .flex1{
+      position: relative;
+    }
+    .b{
+      display: block;
+      font-size:25px;
+    }
+    
+    #cross{
+      display: block;
+      font-size:25px;
+      position: absolute;
+      margin-bottom:20px;
+      right:8px;
+     
+    }
+    #checkbox:checked~.ul{
+        display: block;
+    }
+   
+    #checkbox:not(:checked)~.ul{
+        display: none;
+    }
+    #grid2 {
+        grid-template-columns: 10% 37% 6% 37% 10%; /* Original grid */
+        font-size: 16px; /* Original font size */
+    }
+    #grid2 p{
+      font-size:16px;
+    }
+    .flex2{
+      width:200px;
+    }
+    #big{
+      font-size:29px;
+    }
+    .flex p{
+      font-size:16px;
+    }
+    .flex h2{
+      font-size:20px;
+    }
+    footer{
+      margin-top:50px;
+    }
+    .img{
+      height:300px;
+    }
+    h1{
+      font-size:45px;
+    }
+    #butt1{
+      width:150px;
+    }
+}
+@media only screen and (max-width: 590px){
+  
+  #searchIcon {
+        left:6%;
+  }
+  #search{
+      width:410px;
+    }
+}
+@media only screen and (max-width: 550px){
+  #searchIcon {
+        left:2%;
+  }
+nav {
+      grid-template-columns: 5% 20% 21% 15% 14% 24% 5%;
+    }
+  }
+@media only screen and (max-width: 500px){
+ 
+  #searchIcon {
+        left:0%;
+        margin:0px;
+      }
+    
+}
+
+</style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div></div>
+        <input type="checkbox" id="checkbox" >
+        <label for="checkbox" class="b"><i class="fa-solid fa-bars"></i></label>
+        <div class="flex1">
+          <img src="shopping-cart (1).png" alt="shopping" id="img1">
+          <p id="big">FreshFits</p>
+        </div>
+        <div></div>
+        <ul class="ul">
+          <label for="checkbox" id="cross"><i class="fa-solid fa-xmark"></i></label>
+          <li><a href="/">Shop</a></li>
+          <li><a href="/Men">Men</a></li>
+          <li><a href="/Women">Women</a></li>
+          <li><a href="/Kids">Kids</a></li>
+        </ul>
+        <div></div>
+        <div class="flex1">
+          <% if(!user){ %> 
+            <button id="butt1" class="log">Login</button>
+            <% } %>
+            <% if(user){ %>
+              <% if(!user.id){ %>
+                <button id="butt1" class="log">Login</button>
+              <% } %>
+              <% if(user.id){ %>
+              <form action="/user/logout?redirectTo=ProductDetails" method="post">
+                  <button id="logout" class="log">Logout</button>
+              </form>
+              <% } %>
+            <% } %>
+            <a href="/cart"><img src="shopping-cart.png" id="img2" ></a>
+        </div>
+        <div></div>
+      </nav>
+    
+      <form action="/Search" method="post">
+        <img src="loupe.png" id="searchIcon">
+          <input type="search" placeholder="Search..." id="search" name="search">
+      </form>
+    </header>
+    <div id="align"><%= message %></div>
+    <h1><%= product[0].product_name %></h1>
+    <div class="f">
+    <div class="images">
+      <img src="<%=product[0].p%>" alt="" class="img">
+      <img src="<%=product[0].image_url%>" alt="" class="img">
+      <img src="<%=product[0].image_url2%>" alt=""  class="img">
+      <img src="<%=product[0].image_url3%>" alt=""  class="img">
+    </div>
+      
+    <div class="flex">
+    <p><%=product[0].description%></p>
+    <div>
+      <h2>Price:</h2>
+      <p>$<%= product[0].price %></p>
+      <p id="line">$<%=product[0].discount_price.toFixed(2)%></p>
+    </div>
+    <% initial=product[0].price+product[0].discount_price %>
+    <% discount=((initial-product[0].price)*100/initial).toFixed(2) %>
+      <p id="dis">(<%= discount %>% OFF)</p>
+    <div>
+      <h2>Stock Quantity:</h2>
+      <p><%= product[0].stock_quantity %></p>
+    </div>
+    <div>
+      <h2>Size:</h2>
+      <p><%= product[0].size %></p>
+    </div>
+    <div>
+      <h2>Color:</h2>
+      <p><%= product[0].color %></p>
+    </div>
+    <div>
+        <h2>Material:</h2>
+        <p><%= product[0].material %></p>
+      </div>
+    <div>
+      <h2>Category:</h2>
+      <p><%= product[0].name %></p>
+    </div>
+    <button id="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Add to Cart
+    </button>
+    </div>
+</div>
+<footer>
+    <div class="flex2">
+      <img src="shopping-cart (1).png" alt="shopping" id="img1" style="margin-top:2px;">
+      <p id="big">FreshFits</p>
+    </div>
+    <div id="grid2">
+      <div></div>
+      <div>
+        <p>Contact Us</p>
+        <a href="#" class="a"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="a"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="a"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="a"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div></div>
+      <div >
+        <p>Online Shopping</p>
+        <a href="/" class="a">Shop</a>
+        <a href="/Men" class="a">Men</a>
+        <a href="/Women" class="a">Women</a>
+        <a href="/kids" class="a">Kids</a>
+      </div>
+      <div></div>
+    </div>
+  </footer>
+  <script>
+    const addcart=document.getElementById("cart");
+    addcart.addEventListener('click',()=>{
+      window.location.href='/addcart?redirectTo=ProductDetails';
+    })
+             const sign=document.getElementById('butt1');
+              sign.addEventListener('click',()=>{
+                window.location.href='/user/signup?redirectTo=ProductDetails';
+              })
+              setTimeout(()=>{
+              const message=document.getElementById('align');
+              message.style.display="none";
+              },6000);
+              
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+*{
+    font-family:poppins;
+}
+img{
+    height:40px;
+}
+a:link{
+    text-decoration: none;
+    color:black;
+}
+a:active
+{
+    color:black;
+    text-decoration: solid 2px red underline;
+}
+a:hover
+{
+    color:black;
+    text-decoration: solid 2px red underline;
+}
+a:visited
+{
+    color:black;
+    text-decoration: solid 2px red underline;
+}
+
+#butt1{
+    border-radius: 40px;
+    padding:5px 20px;
+    border: 1px gray solid;
+    color:rgb(63, 63, 63);
+    width:100px;
+    height:30px;
+    margin-top:5px;
+    background-color: white;
+}
+li{
+    list-style-type: none;
+    font-size: 20px;
+}
+nav{
+    display: grid;
+    grid-template-columns: 9% 15% 18% 20% 18% 11% 9%;
+    align-items: center;
+}
+
+#big{
+    font-size:30px;
+}
+.flex,ul
+{
+    display: flex;
+    justify-content: space-around;
+}
+#img1
+{
+    margin-top: 26px;
+}
+#img2
+{
+    margin-bottom:5px;
+}
+#background{
+    background-image: url('pexels-kseniachernaya-3965545.jpg');
+    height:700px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:0% 30%;
+}
+#back2
+{
+    background-color: rgba(0, 0, 0,0.6);
+    height: 100%;
+    width: 100%;
+}
+#p1
+{
+    font-size: 35px;
+    position: absolute;
+    left:50%;
+    top:30%;
+    transform: translate(-50%,-30%);
+    color: white;
+}
+#p2
+{
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+#butt2
+{
+    font-size: 20px;
+    color: white;
+    background-color: rgb(171, 19, 19);
+    border: none;
+    width: 250px;
+    height:40px;
+    border-radius:20px;
+    position: absolute;
+    left:50%;
+    top:80%;
+    transform: translate(-50%,-80%);
+}
+#span{
+    width: 10px;
+}
+h3{
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+#line{
+    height:8px;
+    background-color: black;
+    width:350px;
+    border-radius:20px;
+    margin: 0px;
+   
+}
+#girls{
+    margin-top:30px;
+    display: grid;
+    grid-template-columns: 11% 5% 15% 5% 15% 5% 15% 5% 15% 9%;
+    
+}
+.pics{
+    height: 350px;
+}
+.deleted{
+    text-decoration: solid gray line-through;
+    color:gray;
+    margin-left:20px;
+}
+.pic{
+    width: 200px;
+    height:40px;
+    text-align: justify;
+    font-size:14px;
+}
+.flex2{
+    display: flex;
+    justify-content: center;
+}
+.Bg{
+    background-image: url('Menbg.jpg');
+    height:350px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+#bc{
+    font-size: 50px;
+    color: white;
+}
+.align{
+    align-items: center;
+}
+#bg{
+    background-image: url('womenbg.jpg');
+    background-position:0% 22%;
+}
+#bg2{
+    background-image: url('kidss.jpg');
+    background-position:0% 33%;
+}
+.price{
+    width: 200px;
+}
+.red{
+    background-color: red;
+    margin-left:20px;
+    color: white;
+    border-radius: 20px;
+    padding:5px 10px;
+}

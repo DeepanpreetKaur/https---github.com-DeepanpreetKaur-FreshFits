@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <style>
+      @font-face {
+        src: url(Poppins-Regular.ttf);
+        font-family: pop;
+      }
+      @font-face {
+        src: url(Poppins-BlackItalic.ttf);
+        font-family: popBold;
+      }
+      * {
+        font-family: pop;
+      }
+
+      body {
+        font-family: poppins;
+        background-color: #f4f7f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: linear-gradient(
+          rgba(247, 173, 195, 0.3),
+          rgba(248, 248, 172, 0.3)
+        );
+        background-repeat: no-repeat;
+        min-height: 100svb;
+      }
+
+      #big {
+        font-size: 30px;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      #img1 {
+        margin-right: 12px;
+        margin-top: 15px;
+        height: 65px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        top: 30px;
+      }
+      .header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid #e1e1e1;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #ff0051;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        margin-top: 30px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      .form-group input:focus {
+        border-color: #ff0051;
+        outline: none;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #ff0051;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .form-group button:hover {
+        background-color: #ff0051;
+      }
+      #message{
+        text-align: center;
+        font-weight: bold;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+      }
+      .footer a {
+        color: #ff0051;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+      }
+      .toggle-container input {
+            margin-right: 5px;
+      }
+      #togglePassword{
+        display: none;
+      }
+@media (max-width: 1200px) {
+  .container {
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    font-size: 15px;
+  }
+
+  .form-group button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  .form-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  #img1 {
+    margin-top:23px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-size: auto; 
+  }
+  .container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 8px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 13px;
+  }
+
+  .form-group button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div></div>
+      <div class="flex">
+        <img src="shopping-cart (1).png" alt="shopping" id="img1">
+        <p id="big">FreshFits</p>
+      </div>
+      <div></div>
+    </nav>
+    <div id="message"><%=message %></div>
+    <div class="container">
+      <div class="header">
+        <h1>Login</h1>
+      </div>
+      <form action="/user/login" method="post">
+        <input type="hidden" name="id" value="<%=body.product_id%>">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" value="<%=body.email%>" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" value="<%=body.password%>" required />
+          <div class="toggle-container">
+            <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()">
+            <label for="togglePassword" id="showhide">Show Password</label>
+          </div>
+          <div class="error"><%= password %></div>
+        </div>
+        <div class="form-group">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+      <div class="footer">
+        <p><a href="/user/ResetPassword">forget your Password? </a></p>
+      </div>
+    </div>
+    <script>
+      function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            const pass=document.getElementById("showhide");
+            if (togglePassword.checked) {
+                passwordField.type = 'text';
+                pass.textContent="Hide Password";
+            } else {
+                passwordField.type = 'password';
+                pass.textContent="Show Password";
+            }
+        }
+    </script>
+  </body>
+</html>
