@@ -295,7 +295,7 @@ class user{
             }
             else{
                 
-                return res.redirect('/user/Payment');
+                return res.redirect('/user/otpsms');
         }
     }
     static async signup(req,res)
@@ -411,8 +411,8 @@ class user{
             shipping_address_collection:{
                 allowed_countries:['IN','US','BR']
             },
-            success_url:"http://localhost:8080/OrderConfirmation",
-            cancel_url:"http://localhost:8080/cart"
+            success_url:"http://localhost:8080/OrderConfirmation" ||"",
+            cancel_url:"http://localhost:8080/cart"|| ""
         })
         console.log(session);
         return res.redirect(session.url);
