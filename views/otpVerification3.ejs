@@ -23,7 +23,7 @@
           rgba(248, 248, 172, 0.3)
         );
         background-repeat: no-repeat;
-        height: 730px;
+        min-height: 100svb;
       }
 
       #big {
@@ -46,7 +46,7 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         position: relative;
-        top: 100px;
+        top: 200px;
       }
       .form-group {
         margin-bottom: 15px;
@@ -88,8 +88,6 @@
         text-align: center;
         font-weight: bold;
       }
-            
-/* For max-width: 1200px */
 @media (max-width: 1200px) {
   .container {
     max-width: 500px;
@@ -109,8 +107,6 @@
     padding: 12px;
   }
 }
-
-/* For max-width: 900px */
 @media (max-width: 900px) {
   .container {
     max-width: 400px;
@@ -135,10 +131,9 @@
   }
 }
 
-/* For max-width: 600px */
 @media (max-width: 600px) {
   body {
-    background-size: auto; /* Adjust background size for smaller screens */
+    background-size: auto; 
   }
   .container {
     max-width: 100%;

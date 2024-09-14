@@ -98,12 +98,6 @@
 
     }
 
-    /* #back2 {
-       background-color: rgba(0, 0, 0, 0.6); 
-      height: 100%;
-      width: 100%;
-    } */
-
     #p1 {
       font-size: 35px;
       position: absolute;
@@ -665,7 +659,7 @@ nav {
       grid-template-columns: 5% 42.5% 5% 42.5% 5%;
     }
 }
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 460px){
   nav {
       grid-template-columns: 0% 10% 25% 10% 20% 33% 0%;
     }
@@ -692,6 +686,34 @@ nav {
     }
    
 }
+@media only screen and (max-width: 430px){
+  nav {
+      grid-template-columns: 0% 9% 25% 9% 20% 35% 0%;
+    }
+    #butt1,#logout{
+      padding-top:1px;
+      padding-bottom: 1px;
+    }
+}
+@media only screen and (max-width: 400px){
+  nav {
+      grid-template-columns: 0% 8% 25% 8% 20% 37% 0%;
+    }
+    .pic,.price,.deleted,.red{
+      font-size:14px;
+    }
+}
+@media only screen and (max-width: 370px){
+  nav {
+      grid-template-columns: 0% 7.5% 25% 7.5% 20% 40% 0%;
+    }
+}
+@media only screen and (min-width: 1654.5px){
+ .border{
+  margin-left:50px;
+  margin-right: 50px;
+ }
+  }
 .display,.display2{
   display: none;
   border: none;
@@ -737,8 +759,8 @@ nav {
           <% if(user.id){ %>
           <form action="/user/logout?redirectTo" method="post">
               <button id="logout" class="log">Logout</button>
-              <a href="/admin/ProductList"><button id="butt1" class="log admin">Admin</button></a>
           </form>
+          <a href="/admin/ProductList"><button id="butt1" class="log admin">Admin</button></a>
           <% } %>
         <% } %>
       <a href="/cart"><img src="shopping-cart.png" id="img2" ></a>
@@ -763,63 +785,6 @@ nav {
     <div class="flex">
       <div id="line"></div>
     </div>
-    <!-- <% for(i=0;i<images.length;i++) { %>
-      <% if(images[i].stock_quantity<5) { %>
-        <div class="border">
-          <img src="<%=images[i].image_url%>" alt="girl1" class="pics">
-          <p class="pic">
-            <%=images[i].product_name%>
-          </p>
-          <p class="price">$<%=images[i].price%>
-              <% if(images[i].discount_price>0.00){ %>
-                <% initial=images[i].price+images[i].discount_price %>
-                  <span class="deleted">$<%= initial %></span>
-                  <% discount=((initial-images[i].price)*100/initial).toFixed(2) %>
-                    <span class="red">
-                      <%= discount %>% OFF
-                    </span>
-                    <% } %>
-          </p>
-          <% } %>
-          </div>
-          <% } %>
-    </div> -->
-    <!-- <% g=0 %>
-      <% for(i=0;i<images.length&&g<=8;i=j){ %>
-        <% n=0 %>
-          <div id="girls">
-            <div></div>
-            <% for(j=i;n<4&&j<images.length;j++){ %>
-              <% if(images[j].stock_quantity<5){ %>
-                <div class="border">
-                  <img src="<%=images[j].image_url%>" alt="girl1" class="pics">
-                  <p class="pic">
-                    <%=images[j].product_name%>
-                  </p>
-                  <p class="price">$<%=images[j].price%>
-                      <% if(images[j].discount_price>0.00){ %>
-                        <% initial=images[j].price+images[j].discount_price %>
-                          <span class="deleted">$<%= initial %></span>
-                          <% discount=((initial-images[j].price)*100/initial).toFixed(2) %>
-                            <span class="red">
-                              <%= discount %>% OFF
-                            </span>
-                            <% } %>
-                  </p>
-                  <span id="display"><%= images[j].product_id %></span>
-                </div>
-                <div></div>
-                <% n++,g++ %>
-                  <% } %>
-                    <% if(n<i+4&&j>=images.length){ %>
-                      <% for(p=n;p<i+4;p++){ %>
-                        <div></div>
-                        <div></div>
-                        <% } %>
-                          <% } %>
-                            <% } %>
-          </div>
-          <% } %> -->
       <div id="girls">
           <% g=0 %>
       <% for(i=0;i<images.length;i++) { %>
@@ -860,31 +825,6 @@ nav {
               <div class="flex">
                 <div id="line"></div>
               </div>
-              <!-- <% for(i=images.length-8;i<images.length;i=i+4){ %>
-                <div id="girls">
-                  <div></div>
-                  <% for(j=i;j<i+4&&j<images.length;j++){ %>
-                    <div class="border">
-                      <span id="display"><%= images[j].product_id %></span>
-                      <img src="<%=images[j].image_url%>" alt="girl1" class="pics">
-                      <p class="pic">
-                        <%=images[j].product_name%>
-                      </p>
-                      <p class="price">$<%=images[j].price%>
-                        <% if(images[j].discount_price>0.00){ %>
-                          <% initial=images[j].price+images[j].discount_price %>
-                            <span class="deleted">$<%= initial %></span>
-                            <% discount=((initial-images[j].price)*100/initial).toFixed(2) %>
-                              <span class="red">
-                                <%= discount %>% OFF
-                              </span>
-                              <% } %>
-                    </p>
-                    </div>
-                    <div></div>
-                    <% } %>
-                </div>
-                <% } %> -->
               <div id="girls">
                 <% d=0 %>
               <% for(i=images.length-8;i<images.length;i++) { %>
@@ -986,10 +926,6 @@ nav {
                   window.location.href =`/ProductDetails?productid=${id}`;
                 })
               })
-              // const sign=document.getElementById('butt1');
-              // sign.addEventListener('click',()=>{
-              //   window.location.href='/user/signup?redirectTo=';
-              // })
               setTimeout(()=>{
               const message=document.getElementById('align');
               message.style.display="none";

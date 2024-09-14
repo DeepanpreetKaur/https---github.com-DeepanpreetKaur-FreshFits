@@ -82,13 +82,6 @@
     #big {
       font-size: 30px;
     }
-
-    #searchIcon {
-      height: 25px;
-      position: absolute;
-      left:29%;
-      top:3%;
-    }
     header{
         background-color:rgba(247, 173, 195, 0.1);
     }
@@ -192,11 +185,12 @@
     }
    
     footer{
-      margin-top:260px;
       background-color: #ff0051;
       color:white;
       position: relative;
+      bottom:0px;
       height:300px;
+      top:450px;
     }
     #grid2{
       display: grid;
@@ -277,38 +271,16 @@
       *{
     max-width:100%;
     }
-      #searchIcon {
-        left:28%;
-      }
       .flex2{
       width:250px;
     }
     }
-    @media only screen and (max-width: 1550px) {
-      #searchIcon {
-        left:27.5%;
-      }
-    }
-    @media only screen and (max-width: 1500px) {
-      #searchIcon {
-        left:26.5%;
-      }
-    }
     @media only screen and (max-width: 1450px) {
-      #searchIcon {
-        left:25.5%;
-      }
       nav {
       grid-template-columns: 9% 15% 16% 24% 16% 11% 9%;
     }
      
     }
-    @media only screen and (max-width: 1340px) {
-    #searchIcon {
-        left:23.5%;
-      }
-
-  }
   @media only screen and (min-width: 1250px) {
     table{
         width:60%;
@@ -321,25 +293,16 @@
     nav {
       grid-template-columns: 8% 17% 14% 26% 14% 13% 8%;
     }
-    #searchIcon {
-        left:21%;
-      }
       #pm{
       margin-top:74px;
      }
 }
 @media only screen and (max-width: 1150px) {
-      #searchIcon {
-        left:20%;
-      }
       nav {
       grid-template-columns: 6% 18% 14% 28% 14% 14% 6%;
     }
     }
 @media only screen and (max-width: 1100px) {
-      #searchIcon {
-        left:17%;
-      }
       table{
       width:60%;
     }
@@ -355,9 +318,6 @@
    
 }
 @media only screen and (max-width: 1000px) {
-      #searchIcon {
-        left:14%;
-      }
       #ts{
         flex-wrap: wrap;
       }
@@ -383,19 +343,12 @@
      }
     }
 @media only screen and (max-width: 940px) {
-
-      #searchIcon {
-        left:10%;
-      }
       nav {
       grid-template-columns: 2% 20% 10% 36% 10% 16% 2%;
     }
    
     }
 @media only screen and (max-width: 840px){
-      #searchIcon {
-        left:8%;
-      }
       nav {
       grid-template-columns: 2% 21% 6% 38% 6% 17% 2%;
     }
@@ -407,9 +360,6 @@
       
       #search{
         width:600px;
-      }
-      #searchIcon {
-        left:5%;
       }
       nav {
       grid-template-columns: 0% 21% 10% 38% 10% 20% 0%;
@@ -430,10 +380,6 @@
       }
     }
     @media only screen and (max-width: 750px) {
-      #searchIcon{
-        left:2%;
-      }
-     
     nav {
       grid-template-columns: 0% 21% 6% 42% 6% 20% 0%;
     }
@@ -442,9 +388,6 @@
       nav {
       grid-template-columns: 0% 21% 6% 42% 6% 18% 0%;
     }
-      #searchIcon {
-        left:2%;
-      }
       #search{
         width:550px;
         height:26px;
@@ -473,9 +416,6 @@
     }
     }
     @media only screen and (max-width: 650px) {
-      #searchIcon {
-        left:1%;
-      }
       #search{
         width:510px;
       }
@@ -504,9 +444,6 @@
       grid-template-columns: 5% 20% 21% 15% 14% 22% 5%;
       height:90px;
     }
-    #searchIcon {
-        left:0%;
-      }
       #search{
         width:500px;
       }
@@ -567,35 +504,82 @@
    
 }
 @media only screen and (max-width: 590px){
-  
-  #searchIcon {
-        left:6%;
-  }
   #search{
       width:410px;
     }
 }
 @media only screen and (max-width: 550px){
-  #searchIcon {
-        left:2%;
-  }
 nav {
       grid-template-columns: 5% 20% 21% 15% 14% 24% 5%;
     }
   }
 @media only screen and (max-width: 502px){
- 
-  #searchIcon {
-        left:0%;
-        margin:0px;
-      }
      #foot{
       height:12px;
       top: -5px;
       left: 5px;
     }
-    
+    table{
+      width:500px;
+      padding: 0px;
+      margin: 0px;
+    }
 }
+@media only screen and (max-width: 470px){
+ table th,td{
+  width:100%;
+  padding: 0px;
+ }
+ .f{
+  width:20px;
+ }
+ nav {
+      grid-template-columns: 3% 20% 21% 15% 14% 28% 3%;
+ }
+ #pm{
+  margin-top:65px;
+ }
+}
+@media only screen and (max-width: 430px){
+  #p,#sub{
+      display: none;
+     }
+}
+@media only screen and (max-width: 420px){
+  #table th,td{
+  font-size:12px;
+ width:20px;
+      padding: 0px;
+      text-align: center;
+    }
+    #picture,.f{
+      width:0px;
+      padding:0px;
+    }
+    .img{
+      width:80px;
+      height:120px;
+    }
+}
+@media only screen and (max-width: 420px){
+  nav {
+      grid-template-columns: 1% 10% 21% 10% 25% 32% 1%;
+ }
+ #pm{
+      margin-top:30px;
+     }
+    
+ 
+}
+@media only screen and (min-width: 1654.5px){
+ #table{
+  width:1000px;
+ }
+#table td,th{
+  padding-left:50px;
+  padding-right: 50px;
+}
+  }
     </style>
 </head>
 <body>
@@ -637,7 +621,6 @@ nav {
           </nav>
         
           <form action="/Search" method="post">
-            <img src="loupe.png" id="searchIcon">
               <input type="search" placeholder="Search..." id="search" name="search">
           </form>
         </header> 
@@ -652,13 +635,13 @@ nav {
         <tr>
             <th id="picture">Shopping Cart</th>
             <th class="pm">Quantity</th>
-            <th>SubTotal</th>
+            <th id="sub">SubTotal</th>
             <th><button><i class="fa-solid fa-trash"></button></i></th>
         </tr>
         
        <% list.forEach(product=>{ %>
         <tr>
-            <td>
+            <td class="f">
               <p style="display:none;"><%= product.id %></p></p>
                 <img src="<%=product.image_url%>" class="img">
                 <div id="detail">
@@ -669,6 +652,7 @@ nav {
                     <p>Size: <%= product.size %></p>
                 </div>
             </td>
+
             <td class="pm" id="pm"><button id="minus" class="minus"><i class="fa-solid fa-minus"></i></button><span id="quantity"><%= product.Quantity %></span><button id="plus" class="plus"><i class="fa-solid fa-plus"></i></button></td>
             <td id="p">$<span id="price"><%= product.sub %></span><p style="display: none;"><%= product.price %></p></td>
             <td><button id="trash" class="trash"><i class="fa-solid fa-trash"></i></button></td>
@@ -783,7 +767,7 @@ nav {
        })
         const order=document.getElementById("add");
         order.addEventListener("click",()=>{
-          window.location.href=`/user/address`;
+          window.location.href='/user/address';
         })
         const sign=document.getElementById('butt1');
               sign.addEventListener('click',()=>{

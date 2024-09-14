@@ -103,13 +103,12 @@ class products {
   
   static async search(req,res)
   {
-    if(req.body)
-    {
-      if(req)
-      req.session.search=req.body;
+    if(req.body.search)
+    { 
+      req.session.search=req.body.search;
     }
-    console.log(req.session.search.search);
-    sql.query(`select * from products INNER join category on products.category_id=category.id where category.name="${req.session.search.search}"`,(err,result)=>{
+    console.log(req.session.search);
+    sql.query(`select * from products INNER join category on products.category_id=category.id where category.name="${req.session.search}"`,(err,result)=>{
       if(err) throw err;
       return res.render("search",{images:result,message:req.flash('info')});
     })

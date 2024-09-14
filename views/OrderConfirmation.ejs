@@ -25,7 +25,6 @@
         padding: 0;
         color: #333;
         background-image: linear-gradient(
-            /* rgba(255, 0, 81,0.3), */
           rgba(247, 173, 195, 0.3), 
           rgba(248, 248, 172, 0.3)
         );
@@ -156,7 +155,7 @@
     width:55%;
   }
 }
-/* For max-width: 900px */
+
 @media (max-width: 900px) {
 
   #table{
@@ -220,7 +219,19 @@
   #table1{
     font-size:14px;
   }
-
+  }
+  @media (max-width: 400px) {
+    #table{
+        width:60%;
+      }
+      #table tr{
+        width:200px;
+      }
+      #table td,th{
+        width:200px;
+        text-align: center;
+        padding:10px;
+      }
   }
     </style>
   </head>

@@ -25,7 +25,7 @@ const sequelize = new Sequelize({
 });
 
 
-// Define the session store with Sequelize
+
 const sessionStore = new SequelizeStore({
     db: sequelize
 });
@@ -38,11 +38,11 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    store: sessionStore,       // Use the Sequelize session store
+    store: sessionStore,       
     cookie: {
-        maxAge: 50 * 24 * 60 * 60 * 1000, // Cookie expires in 50 days
-        httpOnly: true,        // Cookie is only accessible by the web server
-        secure: false          // Set to true if using HTTPS
+        maxAge: 50 * 24 * 60 * 60 * 1000,
+        httpOnly: true,        
+        secure: false          
     }
   }));
 

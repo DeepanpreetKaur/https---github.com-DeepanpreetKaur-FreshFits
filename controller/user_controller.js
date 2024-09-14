@@ -141,21 +141,23 @@ class user{
         var otp=Math.floor(100000 + Math.random() * 900000);
         req.session.otp=otp;
 
-        const msg=`Dear ${req.session.sign.username} ,`+"\r\n Thank you for signing up with FreshFits.\r\n"+
-        ` To complete your account creation, please use the following One-Time Password (OTP):Your OTP code is: ${otp}`+
-        "\r\nEnter this OTP on the account creation page to verify your email address and complete your registration."+
-        "\r\n\r\nBest regards,\r\nThe FreshFits Team";
-        const result= await sql.query(`select * from users where Email="${req.session.login.email}"`)
-        const msg2=`Dear ${result[0][0].Username} ,`+"\n We received a request to log into your account with FreshFits.\n"+
-        " To complete your login, please use the following One-Time Password (OTP):\n"+
-        `Your OTP code is: ${otp}`+
-        "\nEnter this OTP on the login page to gain access to your account."+
-        "\n\nBest regards,\nThe FreshFits Team";
-
         if(req.session.sign)
-        email(req.session.sign.email,"OTP Verification",msg);
+        {    
+            const msg=`Dear ${req.session.sign.username} ,`+"\r\n Thank you for signing up with FreshFits.\r\n"+
+            ` To complete your account creation, please use the following One-Time Password (OTP):Your OTP code is: ${otp}`+
+            "\r\nEnter this OTP on the account creation page to verify your email address and complete your registration."+
+            "\r\n\r\nBest regards,\r\nThe FreshFits Team";
+            email(req.session.sign.email,"OTP Verification",msg);
+        }
+      
         if(req.session.login)
-        {
+        {   
+            const result= await sql.query(`select * from users where Email="${req.session.login.email}"`)
+            const msg2=`Dear ${result[0][0].Username} ,`+"\n We received a request to log into your account with FreshFits.\n"+
+            " To complete your login, please use the following One-Time Password (OTP):\n"+
+            `Your OTP code is: ${otp}`+
+            "\nEnter this OTP on the login page to gain access to your account."+
+            "\n\nBest regards,\nThe FreshFits Team";
             email(req.session.login.email,"OTP Verification",msg2);
         }
         return res.render('otpVerification2.ejs',{message:req.flash('info'),type:req.flash('type')});
@@ -286,64 +288,14 @@ class user{
         console.log(body);
         req.session.previousAdd=body;
         console.log(req.session.previousAdd);
-        // const zipRegex = /^\d{5}(-\d{4})?$/;
         const phoneNum =/^\+91\d{5}\d{5}$/g;
-        // const phoneNum=/^(?:\+1\s?)?(?:\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}$/;
-        // const str=/^\d+\s[A-Za-z0-9\s.,'-]+$/;
-        // const address=/^[A-Za-z][A-Za-z\s'-]*[A-Za-z]$/;
             if(!phoneNum.test(body.PhoneNumber)) {
                 req.flash('info',"Please enter a valid Phone Number (e.g., +911234567890).");
                 return res.redirect('/user/address');
             }
-            // else  if(!zipRegex.test(body.ZipCode)) {
-            //     req.flash('info',"Please enter a valid ZIP code (e.g., 12345 or 12345-6789).");
-            //     return res.redirect('/user/address');
-            // }
-            // else if(!str.test(body.StreetAddress)) {
-            //     req.flash('info','Please enter a valid Street Address');
-            //     return res.redirect('/user/address');
-            // }else if(!address.test(body.City)) {
-            //    req.flash('info',"Please enter a valid City");
-            //    return res.redirect('/user/address');
-            // }
-            // else if(!address.test(body.State)) {
-            //     req.flash('info',"Please enter a valid State");
-            //     return res.redirect('/user/address');
-            // }
-            //  else if (!address.test(body.Country)) {
-            //     req.flash('info',"Please enter a valid Country");
-            //     return res.redirect('/user/address');
-            // }
             else{
-                // const result =await sql.query( `SELECT zip_codes.zip_code, cities.city_name, states.state_name, 'USA' AS country
-                //     FROM zip_codes
-                //     JOIN cities ON zip_codes.city_id = cities.city_id
-                //     JOIN states ON cities.state_id = states.state_id
-                //     WHERE zip_codes.zip_code =${body.ZipCode}`);
-                // if(!result[0][0])    
-                // {
-                //     req.flash('info',"Sorry , but Services are not available at this location right now!");
-                //     return res.redirect('/user/address');
-                // }  
-                // else if(result[0][0])
-                // {
-                //     req.session.previousAdd=result[0][0];
-                //     req.flash('info','confirm your address please!');
-                //     return res.redirect('/user/address');
-                // }
-               
-                // const already= await sql.query(`select * from useraddress where UserId=${req.session.user.id}`);
-                // console.log(already[0][0]);
-                // if(already[0][0])
-                // {
-                //     await sql.query(`update useraddress set PhoneNumber='${body.PhoneNumber}',StreetAddress='${body.StreetAddress}',City='${body.City}',State='${body.State}',ZipCode='${body.ZipCode}',Country='${body.Country}' where UserID=${req.session.user.id}`); 
-                // }
-                // else
-                // {
-                //     await sql.query(`insert into useraddress(UserID,PhoneNumber,StreetAddress,City,State,ZipCode,Country) values(${req.session.user.id},'${body.PhoneNumber}','${body.StreetAddress}','${body.City}','${body.State}','${body.ZipCode}','${body.Country}')`);
-                // }
                 
-                return res.redirect('/user/otpsms');
+                return res.redirect('/user/Payment');
         }
     }
     static async signup(req,res)
